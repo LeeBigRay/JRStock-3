@@ -31,8 +31,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        NSArray *images = @[@"photo_crop_freedom",@"photo_crop_11",@"photo_crop_23",@"photo_crop_34",@"photo_crop_916",@"photo_crop_verticalgold"];
-        NSArray *titles = @[@"自由",@"1:1",@"2:3",@"3:4",@"9:16",@"黄金比例"];
+        NSArray *images = @[@"photo_crop_11",@"photo_crop_23",@"photo_crop_34",@"photo_crop_916",@"photo_crop_verticalgold"];
+        NSArray *titles = @[@"1:1",@"2:3",@"3:4",@"9:16",@"黄金比例"];
         HCPhotoEditBaseScrollView *scrollView = [[HCPhotoEditBaseScrollView alloc] initWithFrame:self.bounds bottomTitle:@"裁剪" imagesNameArray:images titlesArray:titles buttonWidth:self.bounds.size.width/3.0 imageSize:35];
         scrollView.delegate = self;
 //        scrollView.ignoreButtonSelect = YES;
@@ -70,15 +70,16 @@
     view.mainImageView = self.mainImageView;
     self.cutView = view;
 
-    if (index == 0)
-    {
-        view.proportion = 0;
-    }
-    else if (index == 1)
+//    if (index == 0)
+//    {
+//        view.proportion = 0;
+//    }
+//    else
+        if (index == 0)
     {
         view.proportion = 1.0/1.0;
     }
-    else if (index == 2)
+    else if (index == 1)
     {
         if (btn.normalState) {
             view.proportion = 2.0/3.0;
@@ -91,7 +92,7 @@
             [btn setTitle:@"3:2" forState:UIControlStateSelected];
         }
     }
-    else if (index == 3)
+    else if (index == 2)
     {
         if (btn.normalState) {
             view.proportion = 3.0/4.0;
@@ -103,7 +104,7 @@
             [btn setTitle:@"4:3" forState:UIControlStateSelected];
         }
     }
-    else if (index == 4)
+    else if (index == 3)
     {
         if (btn.normalState) {
             view.proportion = 9.0/16.0;
@@ -115,7 +116,7 @@
             [btn setTitle:@"16:9" forState:UIControlStateSelected];
         }
     }
-    else if (index == 5)
+    else if (index == 4)
     {
         //photo_crop_horizontalgold_h@2x
         if (btn.normalState) {

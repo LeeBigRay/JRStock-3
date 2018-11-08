@@ -40,7 +40,6 @@
     [self.view addSubview:self.isSrc];
     [self.view addSubview:self.isSrcSwitch];
     [self.view addSubview:self.pickBtnView];
-
     _choosePicBtn.backgroundColor = [UIColor grayColor];
     _bgImageView.backgroundColor = [UIColor whiteColor];
     _contentLabel.backgroundColor = [UIColor clearColor];
@@ -154,7 +153,7 @@
 
 -(UIImageView *)bgImageView{
     if (!_bgImageView) {
-        _bgImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"noneContent"]];
+        _bgImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"addphoto"]];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(choosePic)];
         [_bgImageView addGestureRecognizer:tap];
         _bgImageView.userInteractionEnabled = YES;
